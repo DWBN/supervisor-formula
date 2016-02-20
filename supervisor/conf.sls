@@ -11,7 +11,7 @@ supervisor-dirs:
       - {{ supervisor.logdir }}
       - {{ supervisor.include_confdir }}
     - require:
-      - pip: supervisor
+      - pkg: supervisor
 
 supervisor-config:
   file.managed:
