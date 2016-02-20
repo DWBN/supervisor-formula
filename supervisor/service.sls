@@ -16,7 +16,7 @@ supervisor-start-script-systemd:
     - require_in:
       - service: supervisor-service
     - require:
-      - pip: supervisor
+      - pkg: supervisor
 
 supervisor-start-script-sysvinit:
   file.managed:
@@ -31,7 +31,7 @@ supervisor-start-script-sysvinit:
     - require_in:
       - service: supervisor-service
     - require:
-      - pip: supervisor
+      - pkg: supervisor
 
 supervisor-start-script-upstart:
   file.managed:
@@ -45,7 +45,7 @@ supervisor-start-script-upstart:
     - require_in:
       - service: supervisor-service
     - require:
-      - pip: supervisor
+      - pkg: supervisor
 
 supervisor-service:
   service:

@@ -2,12 +2,12 @@
     'Debian': {
         'pkg': 'supervisor',
         'service': 'supervisor',
-        'daemon': '/usr/local/bin/supervisord',
-        'conf_file': '/etc/supervisord.conf',
+        'daemon': '/usr/bin/supervisord',
+        'conf_file': '/etc/supervisor/supervisord.conf',
         'confdir': '/etc',
         'logdir': '/var/log/supervisor',
         'rundir': '/var/run',
-        'include_confdir': '/etc/supervisord.d',
+        'include_confdir': '/etc/supervisor/conf..d',
     },
     'RedHat': {
         'pkg': 'supervisor',
@@ -44,7 +44,7 @@
         'serverurl': 'unix:///var/run/supervisor.sock',
     },
     'include': {
-        'files': '/etc/supervisord.d/*.ini /etc/supervisord.d/*.conf /etc/supervisord.d/*.cfg',
+        'files': '/etc/supervisor/conf.d/*.ini /etc/supervisor/conf.d/*.conf /etc/supervisor/conf.d/*.cfg',
     },
 }, merge=True) %}
 

@@ -1,6 +1,6 @@
 {% from "supervisor/map.jinja" import supervisor with context %}
 
 supervisor:
-  pip:
+  pkg:
     - installed
     - name: {{ supervisor.pkg }}
