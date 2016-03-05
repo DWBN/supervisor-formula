@@ -7,7 +7,7 @@
         'confdir': '/etc',
         'logdir': '/var/log/supervisor',
         'rundir': '/var/run',
-        'include_confdir': '/etc/supervisor/conf..d',
+        'include_confdir': '/etc/supervisor/conf.d',
     },
     'RedHat': {
         'pkg': 'supervisor',
@@ -65,4 +65,3 @@
     },
 }, grain='os_family', merge=salt['pillar.get']('{{ cookiecutter.formula_name }}:lookup'), base='default') {{ '%}' }}
 #}
-
