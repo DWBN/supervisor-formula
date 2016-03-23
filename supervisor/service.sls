@@ -54,3 +54,5 @@ supervisor-service:
     - enable: True
     - require:
       - file: supervisor-config
+    - watch:
+      - file: {{ supervisor.conf_file }}
