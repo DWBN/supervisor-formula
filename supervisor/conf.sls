@@ -26,6 +26,6 @@ supervisor-config:
     - require:
       - file: supervisor-dirs
 
-supervisorctl-reread:
+supervisorctl-reread-reload:
   cmd.wait:
     - name: supervisorctl reread && supervisorctl reload
