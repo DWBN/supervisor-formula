@@ -22,5 +22,10 @@ supervisor-config:
       config: {{ supervisor_config }}
     - watch_in:
       - service: supervisor
+      - cmd: supervisorctl-reread-reload
     - require:
       - file: supervisor-dirs
+
+supervisorctl-reread:
+  cmd.wait:
+    name: supervisorctl reread && supervisorctl reload
