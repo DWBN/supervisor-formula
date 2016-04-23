@@ -28,4 +28,4 @@ supervisor-config:
 
 supervisorctl-reread:
   cmd.wait:
-    name: supervisorctl reread && supervisorctl reload
+    - name: supervisorctl reread && supervisorctl reload
