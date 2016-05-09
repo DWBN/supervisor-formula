@@ -33,19 +33,23 @@ supervisor-start-script-sysvinit:
     - require:
       - pkg: supervisor
 
-supervisor-start-script-upstart:
-  file.managed:
+# supervisor-start-script-upstart:
+#   file.managed:
+#     - name: /etc/init/supervisor.conf
+#     - source: salt://supervisor/templates/supervisor.upstart
+#     - template: jinja
+#     - context:
+#       config: {{ supervisor }}
+#     - onlyif:
+#       - test -d /etc/init
+#     - require_in:
+#       - service: supervisor-service
+#     - require:
+#       - pkg: supervisor
+#
+supervisor-start-script-upstart-absent:
+  file.absent:
     - name: /etc/init/supervisor.conf
-    - source: salt://supervisor/templates/supervisor.upstart
-    - template: jinja
-    - context:
-      config: {{ supervisor }}
-    - onlyif:
-      - test -d /etc/init
-    - require_in:
-      - service: supervisor-service
-    - require:
-      - pkg: supervisor
 
 supervisor-service:
   service:
