@@ -27,7 +27,7 @@ DAEMON={{ config.daemon }}
 DAEMON_OPTS="--configuration {{ config.conf_file }}"
 NAME=supervisord
 DESC=supervisor
-DAEMON_CTL=/usr/local/bin/supervisorctl
+DAEMON_CTL=/usr/bin/supervisorctl
 
 test -x $DAEMON || exit 0
 
