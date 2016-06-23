@@ -56,3 +56,11 @@ supervisor-service:
       - file: supervisor-config
     - watch:
       - file: {{ supervisor.conf_file }}
+
+start-supervisor:
+  cmd.run:
+    - name: service supervisor start
+    - unless: pgrep supervisor
+    - require:
+      - service: supervisor-service
+      
